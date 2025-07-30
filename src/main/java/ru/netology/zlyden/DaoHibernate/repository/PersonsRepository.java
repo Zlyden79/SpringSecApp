@@ -10,6 +10,9 @@ import java.util.List;
 
 @Repository
 public interface PersonsRepository extends JpaRepository<Person, Human> {
+
+    List<Person> findAll();
+
     List<Person> findByIgnoreCaseCityOfLiving(String city);
 
     List<Person> findByHumanAgeLessThanOrderByHumanAgeAsc(int humanAge);

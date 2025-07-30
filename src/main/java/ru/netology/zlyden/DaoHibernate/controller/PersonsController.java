@@ -20,6 +20,11 @@ public class PersonsController {
         this.personsService = personsService;
     }
 
+    @GetMapping
+    public List<Person> getAllPersons() {
+        return personsService.getAllPersons();
+    }
+
     @GetMapping("/by-city")
     public List<Person> getPersonsByCity(@RequestParam(name = "city") String city) {
         return personsService.getPersonsByCity(city);

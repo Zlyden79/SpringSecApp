@@ -16,6 +16,10 @@ public class PersonsService {
         this.personsRepository = personsRepository;
     }
 
+    public List<Person> getAllPersons() {
+        return personsRepository.findAll();
+    }
+
     public List<Person> getPersonsByCity(String city) {
         return personsRepository.findByIgnoreCaseCityOfLiving(city);
     }
