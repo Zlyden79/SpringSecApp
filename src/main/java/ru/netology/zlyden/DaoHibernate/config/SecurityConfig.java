@@ -28,8 +28,26 @@ public class SecurityConfig {
                 .authorities("read")
                 .build();
 
+        var u3 = User.withUsername("rodrigo")
+                .password(passwordEncoder().encode("reader"))
+                .roles("READ")
+                .build();
+
+        var u4 = User.withUsername("william")
+                .password(passwordEncoder().encode("writer"))
+                .roles("WRITE")
+                .build();
+
+        var u5 = User.withUsername("darth")
+                .password(passwordEncoder().encode("deleter"))
+                .roles("DELETE")
+                .build();
+
         uds.createUser(u1);
         uds.createUser(u2);
+        uds.createUser(u3);
+        uds.createUser(u4);
+        uds.createUser(u5);
 
         return uds;
     }
